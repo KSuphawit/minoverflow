@@ -1,16 +1,16 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
-  SheetContent,
   SheetClose,
+  SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { sidebarLinks } from "@/constants";
+import { SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { SignedOut } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
-import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 
 const NavContent = () => {

@@ -1,10 +1,9 @@
+import MobileNav from "@/components/shared/navbar/MobileNav";
+import Theme from "@/components/shared/navbar/Theme";
+import GlobalSearch from "@/components/shared/search/GlobalSearch";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import Theme from "./Theme";
-import MobileNav from "./MobileNav";
-import GlobalSearch from "../search/GlobalSearch";
 
 function Navbar() {
   return (
