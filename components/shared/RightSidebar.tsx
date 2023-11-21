@@ -4,11 +4,21 @@ import Link from "next/link";
 
 function RightSidebar() {
   const topQuestions = [
-    { _id: "1", title: "Creola Katherine Johnson: mathematician" },
-    { _id: "2", title: "Creola Katherine Johnson: mathematician" },
-    { _id: "3", title: "Creola Katherine Johnson: mathematician" },
-    { _id: "4", title: "Creola Katherine Johnson: mathematician" },
-    { _id: "5", title: "Creola Katherine Johnson: mathematician" },
+    {
+      _id: "1",
+      title:
+        "Would it be appropriate to point out an error in another paper during a referee report?",
+    },
+    { _id: "2", title: "How can an airconditioning machine exist?" },
+    {
+      _id: "3",
+      title: "Interrogated every time crossing UK Border as citizen",
+    },
+    { _id: "4", title: "Low digit addition generator" },
+    {
+      _id: "5",
+      title: "What is an example of 3 numbers that do not make up a vector?",
+    },
   ];
 
   const popularTags = [
@@ -28,7 +38,7 @@ function RightSidebar() {
               <Link
                 href={`/question/${question._id}`}
                 key={question._id}
-                className="flex cursor-pointer items-center justify-between gap-7"
+                className="flex cursor-pointer items-start justify-between gap-7"
               >
                 <p className="body-medium text-dark500_light700">
                   {question.title}
