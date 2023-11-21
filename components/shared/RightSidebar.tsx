@@ -4,39 +4,19 @@ import Link from "next/link";
 
 function RightSidebar() {
   const topQuestions = [
-    "Creola Katherine Johnson: mathematician",
-    "Mario José Molina-Pasquel Henríquez: chemist",
-    "Mohammad Abdus Salam: physicist",
-    "Percy Lavon Julian: chemist",
-    "Subrahmanyan Chandrasekhar: astrophysicist",
+    { _id: "1", title: "Creola Katherine Johnson: mathematician" },
+    { _id: "2", title: "Creola Katherine Johnson: mathematician" },
+    { _id: "3", title: "Creola Katherine Johnson: mathematician" },
+    { _id: "4", title: "Creola Katherine Johnson: mathematician" },
+    { _id: "5", title: "Creola Katherine Johnson: mathematician" },
   ];
 
   const popularTags = [
-    {
-      _id: "1",
-      name: "Javascript",
-      numberOfQuestions: 20152,
-    },
-    {
-      _id: "2",
-      name: "NEXT.JS",
-      numberOfQuestions: 18493,
-    },
-    {
-      _id: "3",
-      name: "REACT.JS",
-      numberOfQuestions: 16259,
-    },
-    {
-      _id: "4",
-      name: "NODE.JS",
-      numberOfQuestions: 15121,
-    },
-    {
-      _id: "5",
-      name: "PYTHON",
-      numberOfQuestions: 14431,
-    },
+    { _id: "1", name: "Javascript", numberOfQuestions: 20152 },
+    { _id: "2", name: "NEXT.JS", numberOfQuestions: 18493 },
+    { _id: "3", name: "REACT.JS", numberOfQuestions: 16259 },
+    { _id: "4", name: "NODE.JS", numberOfQuestions: 15121 },
+    { _id: "5", name: "PYTHON", numberOfQuestions: 14431 },
   ];
   return (
     <section className="background-light900_dark200 light-border custom-scrollbar sticky right-0 top-0 flex h-screen w-[350px] flex-col overflow-y-auto border-l p-6 pt-36 shadow-light-300 dark:shadow-none max-xl:hidden">
@@ -46,11 +26,13 @@ function RightSidebar() {
           {topQuestions.map((question) => {
             return (
               <Link
-                href="/"
-                key={question}
+                href={`/question/${question._id}`}
+                key={question._id}
                 className="flex cursor-pointer items-center justify-between gap-7"
               >
-                <p className="body-medium text-dark500_light700">{question}</p>
+                <p className="body-medium text-dark500_light700">
+                  {question.title}
+                </p>
                 <Image
                   src="/assets/icons/chevron-right.svg"
                   alt="chevron-right"
