@@ -24,7 +24,11 @@ export default function Home() {
           placeholder="Search for Questions Here..."
           otherClasses="flex-1"
         />
-        <Filter filters={HomePageFilters} />
+        <Filter
+          filters={HomePageFilters}
+          otherClasses="min-h-[56px] sm:min-w-[170px]"
+          containerClasses="hidden max-md:flex"
+        />
       </div>
     </>
   );

@@ -18,7 +18,7 @@ interface Props {
   containerClasses?: string;
 }
 
-function Filter({ filters, otherClasses, containerClasses }: Props) {
+const Filter = ({ filters, otherClasses, containerClasses }: Props) => {
   return (
     <div className={`relative ${containerClasses}`}>
       <Select>
@@ -29,11 +29,15 @@ function Filter({ filters, otherClasses, containerClasses }: Props) {
             <SelectValue placeholder="Select a Filter" />
           </div>
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="text-dark500_light700 small-regular border-none bg-light-900 dark:bg-dark-300">
           <SelectGroup>
-            {filters.map((filter) => (
-              <SelectItem key={filter.name} value={filter.value}>
-                {filter.name}
+            {filters.map((item) => (
+              <SelectItem
+                key={item.value}
+                value={item.value}
+                className="cursor-pointer focus:bg-light-800 dark:focus:bg-dark-400"
+              >
+                {item.name}
               </SelectItem>
             ))}
           </SelectGroup>
@@ -41,5 +45,6 @@ function Filter({ filters, otherClasses, containerClasses }: Props) {
       </Select>
     </div>
   );
-}
+};
+
 export default Filter;
