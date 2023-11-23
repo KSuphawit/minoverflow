@@ -9,42 +9,68 @@ import Link from "next/link";
 
 const questions = [
   {
-    _id: "1",
-    title: "How to use NextJS",
+    _id: Math.random().toString(36).substring(7),
+    title: `Question Title - ${Math.random().toString(36).substring(7)}`,
     tags: [
-      { _id: "1", name: "javascript" },
-      { _id: "2", name: "nextjs" },
+      { _id: Math.random().toString(36).substring(7), name: `Tag 1` },
+      { _id: Math.random().toString(36).substring(7), name: `Tag 2` },
+      { _id: Math.random().toString(36).substring(7), name: `Tag 3` },
     ],
     author: {
-      _id: "1",
-      name: "Min",
-      picture: "https://picsum.photos/200/200",
-      clerkId: "id",
+      _id: Math.random().toString(36).substring(7),
+      name: `Author ${Math.random().toString(36).substring(7)}`,
+      picture: `https://picsum.photos/200/200`,
+      clerkId: Math.random().toString(36).substring(7),
     },
-    upvotes: 10,
-    views: 100,
-    answers: 2,
+    upvotes: [
+      Math.random().toString(36).substring(7),
+      Math.random().toString(36).substring(7),
+    ],
+    views: Math.floor(Math.random() * 1000),
+    answers: [
+      {
+        answerId: Math.random().toString(36).substring(7),
+        content: `Answer content - ${Math.random().toString(36).substring(7)}`,
+      },
+      {
+        answerId: Math.random().toString(36).substring(7),
+        content: `Answer content - ${Math.random().toString(36).substring(7)}`,
+      },
+    ],
     createdAt: new Date(),
-    clerkId: "id",
+    clerkId: Math.random().toString(36).substring(7),
   },
   {
-    _id: "2",
-    title: "Matchine learning 101",
+    _id: Math.random().toString(36).substring(7),
+    title: `Question Title - ${Math.random().toString(36).substring(7)}`,
     tags: [
-      { _id: "1", name: "python" },
-      { _id: "2", name: "openAI" },
+      { _id: Math.random().toString(36).substring(7), name: `Tag 1` },
+      { _id: Math.random().toString(36).substring(7), name: `Tag 2` },
+      { _id: Math.random().toString(36).substring(7), name: `Tag 3` },
     ],
     author: {
-      _id: "1",
-      name: "Min",
-      picture: "https://picsum.photos/200/200",
-      clerkId: "id",
+      _id: Math.random().toString(36).substring(7),
+      name: `Author ${Math.random().toString(36).substring(7)}`,
+      picture: `https://picsum.photos/200/200`,
+      clerkId: Math.random().toString(36).substring(7),
     },
-    upvotes: 1000,
-    views: 999,
-    answers: 200,
+    upvotes: [
+      Math.random().toString(36).substring(7),
+      Math.random().toString(36).substring(7),
+    ],
+    views: Math.floor(Math.random() * 1000),
+    answers: [
+      {
+        answerId: Math.random().toString(36).substring(7),
+        content: `Answer content - ${Math.random().toString(36).substring(7)}`,
+      },
+      {
+        answerId: Math.random().toString(36).substring(7),
+        content: `Answer content - ${Math.random().toString(36).substring(7)}`,
+      },
+    ],
     createdAt: new Date(),
-    clerkId: "id",
+    clerkId: Math.random().toString(36).substring(7),
   },
 ];
 
