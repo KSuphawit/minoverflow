@@ -18,7 +18,7 @@ const questions = [
     author: {
       _id: "1",
       name: "Min",
-      picture: "https://picsum.photos",
+      picture: "https://picsum.photos/200/200",
       clerkId: "id",
     },
     upvotes: 10,
@@ -37,7 +37,7 @@ const questions = [
     author: {
       _id: "1",
       name: "Min",
-      picture: "https://picsum.photos",
+      picture: "https://picsum.photos/200/200",
       clerkId: "id",
     },
     upvotes: 1000,
@@ -76,7 +76,7 @@ export default function Home() {
       </div>
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length > 1 ? (
+        {questions.length > 0 ? (
           questions.map((question) => (
             <QuestionCard
               key={question._id}
