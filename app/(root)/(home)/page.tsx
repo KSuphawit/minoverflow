@@ -32,6 +32,9 @@ export default function Home() {
         />
       </div>
       <HomeFilters />
+      <div className="mt-10 flex w-full flex-col gap-6">
+        {/* <QuestionCard /> */}
+      </div>
     </>
   );
 }
