@@ -15,12 +15,16 @@ function HomeFilters() {
   };
 
   return (
-    <div className="mt-10 flex gap-3">
+    <div className="mt-10 hidden gap-3 md:flex">
       {HomePageFilters.map((item) => (
         <Button
           key={item.value}
-          className={`body-medium background-light800_dark400 rounded-lg px-6 py-3 capitalize 
-          ${active === item.value ? "" : ""}`}
+          className={`body-medium rounded-lg px-6 py-3 capitalize shadow-none 
+          ${
+            active === item.value
+              ? "bg-primary-100 text-primary-500 dark:bg-dark-400"
+              : "bg-light-800 text-light-500 dark:bg-dark-300"
+          }`}
           onClickCapture={() => handleClick(item.value)}
         >
           {item.name}
