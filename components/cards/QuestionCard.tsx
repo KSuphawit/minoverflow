@@ -18,9 +18,11 @@ interface QuestionProps {
     picture: string;
     clerkId: string;
   };
-  upvotes: string[];
+  //   upvotes: string[];
+  upvotes: number;
   views: number;
-  answers: Array<object>;
+  //   answers: Array<object>;
+  answers: number;
   createdAt: Date;
   clerkId?: string | null;
 }
@@ -78,14 +80,16 @@ function QuestionCard({
           <Metric
             imgUrl="/assets/icons/like.svg"
             alt="Upvotes"
-            value={formatAndDivideNumber(upvotes.length)}
+            // value={formatAndDivideNumber(upvotes.length)}
+            value={formatAndDivideNumber(upvotes)}
             title=" Votes"
             textStyles="small-medium text-dark400_light800"
           />
           <Metric
             imgUrl="/assets/icons/message.svg"
             alt="message"
-            value={formatAndDivideNumber(answers.length)}
+            // value={formatAndDivideNumber(answers.length)}
+            value={formatAndDivideNumber(answers)}
             title=" Answers"
             textStyles="small-medium text-dark400_light800"
           />
