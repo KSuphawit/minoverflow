@@ -3,7 +3,10 @@
 import Question from "@/database/question.model";
 import Tag from "@/database/tag.model";
 import User from "@/database/user.model";
-import { GetQuestionsParams } from "@/lib/actions/shared.types";
+import {
+  CreateQuestionParams,
+  GetQuestionsParams,
+} from "@/lib/actions/shared.types";
 import { FilterQuery } from "mongoose";
 import { revalidatePath } from "next/cache";
 import { connectToDatabase } from "../mongoose";
@@ -60,7 +63,7 @@ export async function getQuestions(params: GetQuestionsParams) {
   }
 }
 
-export const createQuestion = async (params: any) => {
+export const createQuestion = async (params: CreateQuestionParams) => {
   try {
     connectToDatabase();
 
