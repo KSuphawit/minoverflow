@@ -12,27 +12,28 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useTheme } from "@/context/ThemeProvider";
+import { createQuestion } from "@/lib/actions/question.action";
 import { QuestionsSchema } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Editor } from "@tinymce/tinymce-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 interface Props {
   type?: string;
-  //   mongoUserId: string;
+  mongoUserId: string;
   //   questionDetails?: string;
 }
 
-function Question({ type }: Props) {
+function Question({ type, mongoUserId }: Props) {
   const { mode } = useTheme();
   const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
-  //   const pathname = usePathname();
+  const pathname = usePathname();
 
   const form = useForm<z.infer<typeof QuestionsSchema>>({
     resolver: zodResolver(QuestionsSchema),
@@ -43,7 +44,7 @@ function Question({ type }: Props) {
     },
   });
 
-  function onSubmit(values: z.infer<typeof QuestionsSchema>) {
+  async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setIsSubmitting(true);
 
     try {
@@ -56,13 +57,13 @@ function Question({ type }: Props) {
         // });
         // router.push(`/question/${parsedQuestionDetails._id}`);
       } else {
-        // await createQuestion({
-        //   title: values.title,
-        //   content: values.explanation,
-        //   tags: values.tags,
-        //   author: JSON.parse(mongoUserId),
-        //   path: pathname,
-        // });
+        await createQuestion({
+          title: values.title,
+          content: values.explanation,
+          tags: values.tags,
+          author: JSON.parse(mongoUserId),
+          path: pathname,
+        });
 
         router.push("/");
       }
