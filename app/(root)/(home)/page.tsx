@@ -5,6 +5,9 @@ import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filter";
+import { getQuestions } from "@/lib/actions/question.action";
+import { SearchParamsProps } from "@/types";
+import { auth } from "@clerk/nextjs";
 import Link from "next/link";
 
 const questions = [
@@ -74,7 +77,15 @@ const questions = [
   },
 ];
 
-export default function Home() {
+export default async function Home({ searchParams }: SearchParamsProps) {
+  const { userId } = auth();
+
+  const result = await getQuestions({
+    searchQuery: searchParams.q,
+    filter: searchParams.filter,
+    page: searchParams.page ? +searchParams.page : 1,
+  });
+
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -102,8 +113,8 @@ export default function Home() {
       </div>
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length > 0 ? (
-          questions.map((question) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
@@ -114,7 +125,6 @@ export default function Home() {
               views={question.views}
               answers={question.answers}
               createdAt={question.createdAt}
-              clerkId={question.clerkId}
             />
           ))
         ) : (
