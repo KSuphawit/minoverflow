@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface Props {
   type: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const EditDeleteAction = ({ type, itemId }: Props) => {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   const router = useRouter();
 
   const handleEdit = () => {
