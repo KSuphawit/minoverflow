@@ -91,8 +91,6 @@ function Question({ type, mongoUserId }: Props) {
           });
         }
 
-        console.log("field.value ", field.value);
-
         if (!field.value.includes(tagValue as never)) {
           form.setValue("tags", [...field.value, tagValue]);
           tagInput.value = "";
