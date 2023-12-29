@@ -53,6 +53,8 @@ export async function POST(req: Request) {
   }
 
   const { type, data } = evt;
+  console.log("web hook type ", type);
+  console.log("data ", data);
   const eventHandler = eventHandlers[type];
 
   if (eventHandler) {
