@@ -14,6 +14,6 @@ export default authMiddleware({
   ignoredRoutes: ["/api/webhook", "/api/chatgpt"],
 });
 
-export const cofig = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+export const config = {
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };
