@@ -71,7 +71,7 @@ async function handleUserCreated(data: UserJSON): Promise<Response> {
   const userData = {
     clerkId: id,
     name,
-    username,
+    username: username!,
     email: email_addresses[0].email_address,
     picture: image_url,
   };
@@ -88,7 +88,7 @@ async function handleUserUpdated(data: UserJSON): Promise<Response> {
 
   const updateData = {
     name,
-    username,
+    username: username!,
     email: email_addresses[0].email_address,
     picture: image_url,
   };
