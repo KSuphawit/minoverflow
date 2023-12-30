@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { HomePageFilters } from "@/constants/filter";
+import { HomePageFilters } from "@/constants/filters";
 import { useState } from "react";
 
 function HomeFilters() {
